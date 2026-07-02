@@ -177,7 +177,7 @@ jobs:
       # Step 3: Uncomment to add SBOM generation
       # 👇 Uncomment this section in Step 3: Software Bill of Materials
 - name: Generate Software Bill of Materials (SBOM)
-    run: |
+  run: |
       curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b /usr/local/bin
       syft . -o cyclonedx-json > sbom.json
       echo "📋 SBOM generated with $(jq '.components | length' sbom.json) components"
